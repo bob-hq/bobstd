@@ -5,7 +5,9 @@ description = "Unopinionated plugins for building common things with Bob."
 readme = "README.md"
 authors = [{ name = "Noam Zaks", email = "noam@noamzaks.com" }]
 requires-python = ">=3.12"
-dependencies = ["bob"]
+dependencies = [
+    "bob-build~=0.1.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.11.7,<0.12.0"]
@@ -19,9 +21,6 @@ dev = [
     "ruff>=0.15.18",
     "ty>=0.0.51",
 ]
-
-[tool.uv.sources]
-bob = { git = "https://github.com/bob-hq/bob" }
 
 [tool.ruff.lint]
 ignore = ["F403", "F405"]
