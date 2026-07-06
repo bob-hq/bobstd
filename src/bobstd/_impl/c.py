@@ -5,6 +5,8 @@ from typing import Callable, Generator
 
 from bob.prelude import *
 
+p = plugin_scope()
+
 cc = Rule(
     "$ccbin -MMD -MT $out -MF $out.d $cflags -c $in -o $out",
     description="CC",
@@ -317,6 +319,9 @@ def add_include_path(
         scopes.append(asflags.add(flags))  # ty:ignore[invalid-argument-type]
 
     return ScopeList(scopes)
+
+
+p.close()
 
 
 __all__ = [
